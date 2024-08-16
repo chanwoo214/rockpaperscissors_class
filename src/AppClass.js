@@ -46,9 +46,9 @@ export default class AppClass extends Component {
 
         if (user.name === computer.name) {
             return "Tie";
-        } else if (user.name === "Rock") return computer.name == "Scissors" ? "Win" : "Lose"
-        else if (user.name === "Scissors") return computer.name == "Paper" ? "Win" : "Lose"
-        else if (user.name === "Paper") return computer.name == "Rock" ? "Win" : "Lose"
+        } else if (user.name === "Rock") return computer.name === "Scissors" ? "Win" : "Lose"
+        else if (user.name === "Scissors") return computer.name === "Paper" ? "Win" : "Lose"
+        else if (user.name === "Paper") return computer.name === "Rock" ? "Win" : "Lose"
     }
 
     randomChoice = () => {

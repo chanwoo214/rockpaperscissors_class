@@ -5,6 +5,7 @@ export default class BoxClass extends Component {
     super();
     this.result = "";
   }
+
   getResult = () => {
     if (
       this.props.title === "Computer" &&
@@ -16,6 +17,7 @@ export default class BoxClass extends Component {
       this.result = this.props.result;
     }
   };
+
   render() {
     this.getResult();
     return (
@@ -26,7 +28,11 @@ export default class BoxClass extends Component {
         </h2>
         <img
           className="item-image"
-          src={this.props.item && this.props.item.img || 'https://www.shutterstock.com/shutterstock/photos/2151726093/display_1500/stock-vector-colorful-hand-icon-set-rock-paper-scissors-easy-to-use-vector-material-2151726093.jpg'}
+          src={
+            (this.props.item && this.props.item.img) ||
+            "https://www.shutterstock.com/shutterstock/photos/2151726093/display_1500/stock-vector-colorful-hand-icon-set-rock-paper-scissors-easy-to-use-vector-material-2151726093.jpg"
+          }
+          alt={this.props.item && this.props.item.name ? this.props.item.name : "Default"}
         />
         <h2>{this.result}</h2>
       </div>
